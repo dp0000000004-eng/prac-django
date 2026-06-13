@@ -1,0 +1,10 @@
+{% extends 'mesy/layout.html' %}
+
+{% block body %}
+    <h1>Flights</h1>
+    {% for flight in flights %}
+    <ul>
+        <li style="list-style-type: none;"><a href="{% url 'passenger' flight.id %}" style="color:black; text-decoration: none; font-family:sans-serif;">Origin: {{ flight.origin }} to  Destination: {{ flight.destination }}</a></li>
+    </ul>
+    {% endfor %}
+{% endblock %}

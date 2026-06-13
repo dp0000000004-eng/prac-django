@@ -1,0 +1,14 @@
+{% extends 'mesy/layout.html' %}
+
+{% block body %}
+    <h2>description</h2>
+        <p>Duration: {{ flight.duration }}</p>
+        <p>Origin: {{ flight.origin }} to Destination: {{ flight.destination }}</p>
+    <h2>Passengers</h2>
+    {% for pass in passengers %}
+        <li style="list-style-type: none;">{{ pass }}</li>
+        {% empty %}
+        <li style="list-style-type: none;">No Passengers</li>
+    {% endfor %}
+    <a href="{% url 'all_flight' %}">Back to flights</a>
+{% endblock %}

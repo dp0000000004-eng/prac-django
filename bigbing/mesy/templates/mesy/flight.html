@@ -1,0 +1,10 @@
+{% extends 'mesy/layout.html' %}
+
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        <p>First name{{ form.first_name }}</p>
+        <p>Last name{{ form.last_name }}</p>
+        <input type="submit">
+    </form>
+{% endblock %}

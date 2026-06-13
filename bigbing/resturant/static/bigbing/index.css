@@ -1,0 +1,87 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F0E1; /* Creamy Parchment White */
+  color: #2C3E50; /* Charcoal Navy for text */
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1A3C6E; /* Deep Imperial Blue */
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+  color: #C6A66D; /* Matte Antique Gold */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #F5F0E1; /* Creamy parchment hover */
+}
+
+/* Form container */
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #2C3E50; /* Charcoal Navy background behind book */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #C6A66D; /* Antique Gold labels */
+}
+
+/* Inputs */
+input, textarea, select {
+  width: 35%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #C6A66D;
+  border-radius: 8px;
+  background: #F5F0E1; /* parchment input background */
+  color: #2C3E50;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #1A3C6E; /* deep blue focus */
+  outline: none;
+}
+
+/* Submit button */
+button {
+  background: #8B0000; /* Rich Burgundy Red */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 50px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #600000; /* darker burgundy */
+  transform: scale(1.05);
+}
