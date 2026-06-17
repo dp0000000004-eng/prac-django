@@ -1,0 +1,10 @@
+{% extends 'mesy/layout.html' %}
+
+{% block body %}
+    <h1>Feedbacks</h1>
+    {% for feedback in feedbacks %}
+    <li>
+        {{ feedback.user }}<br>{{ feedback.message }}<small>{{ feedback.created_at|date:"d.m.y" }}</small>
+    </li>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap" );
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── ROOT VARIABLES ── */
+:root {
+  --sky:         #0a1628;
+  --deep:        #060e1c;
+  --accent:      #4f9cf9;
+  --glow:        #7bb8ff;
+  --white:       #f0f4ff;
+  --muted:       #7a8ba8;
+  --card-bg:     rgba(255,255,255,0.04);
+  --card-border: rgba(79,156,249,0.15);
+}
+
+/* ── BODY ── */
+body {
+  background: var(--sky);
+  color: var(--white);
+  font-family: 'NTR', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  border-bottom: 1px solid rgba(79,156,249,0.1);
+  background: rgba(6,14,28,0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'NTR', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+#navbar a {
+  font-family: 'NTR', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#navbar a:hover {
+  color: var(--accent);
+}
+
+/* ── HEADINGS ── */
+h1 {
+  font-family: 'NTR', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+h2 {
+  font-family: 'NTR', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ── LINKS ── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--glow);
+}
+
+/* ── BTN (View Flights button on home) ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--deep);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 0 24px rgba(79,156,249,0.3);
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--glow);
+  color: var(--deep);
+  box-shadow: 0 0 36px rgba(79,156,249,0.5);
+  transform: translateY(-1px);
+}
+
+/* ── HOME PAGE ── */
+body > h3,
+body > h1,
+body > p,
+body > a.btn {
+  text-align: center;
+}
+
+/* Hero section wrapper feel */
+body {
+  padding-top: 0;
+}
+
+/* Center the intro content */
+h3 + h1 {
+  margin-top: 0.2rem;
+}
+
+/* ── FEATURES ── */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.8rem 1.6rem;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(79,156,249,0.35);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-3px);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card h2 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.feature-card h2 a {
+  color: var(--white);
+}
+
+.feature-card h2 a:hover {
+  color: var(--accent);
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ── FLIGHTS LIST ── */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+ul li {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  transition: all 0.2s;
+}
+
+ul li:hover {
+  border-color: rgba(79,156,249,0.35);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+ul li a {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+ul li a:hover {
+  color: var(--accent);
+}
+
+/* ── FORMS ── */
+form {
+  max-width: 420px;
+  margin: 4rem auto;
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label, lable {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(79,156,249,0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: var(--accent);
+  background: rgba(79,156,249,0.06);
+}
+
+textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(79,156,249,0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  border-color: var(--accent);
+}
+
+button[type="submit"],
+input[type="submit"] {
+  width: 100%;
+  background: var(--accent);
+  color: var(--deep);
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(79,156,249,0.25);
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: var(--glow);
+  box-shadow: 0 0 32px rgba(79,156,249,0.45);
+  transform: translateY(-1px);
+}
+
+/* ── SUBMIT BTN class (feedback form) ── */
+.submit-btn {
+  width: 100%;
+  background: var(--accent);
+  color: var(--deep);
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(79,156,249,0.25);
+}
+
+.submit-btn:hover {
+  background: var(--glow);
+  transform: translateY(-1px);
+}
+
+/* ── MESSAGES ── */
+p[style*="color:red"] {
+  background: rgba(255,107,107,0.1) !important;
+  color: #ee0808 !important;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  max-width: 420px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+p[style*="color:green"] {
+  background: rgba(76,175,136,0.1) !important;
+  color: #4caf88 !important;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  max-width: 420px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+/* ── CONTACT PAGE ── */
+.contact-page a,
+body > a[href^="mailto"],
+body > a[href^="#"] {
+  display: block;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem auto;
+  max-width: 420px;
+  color: var(--white);
+  font-size: 0.92rem;
+  transition: all 0.2s;
+}
+
+body > a[href^="mailto"]:hover,
+body > a[href^="#"]:hover{
+  border-color: rgba(79,156,249,0.35);
+  color: var(--accent);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ── PAGE WRAPPER ── */
+body > h1,
+body > h2,
+body > h3,
+body > p,
+body > ul,
+body > form,
+body > .features {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+body > h1 {
+  padding-top: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body > h2 {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;
+}
+
+/* ── LOGOUT LINK ── */
+a[href*="logout"] {
+  display: inline-block;
+  margin: 1rem auto;
+  color: #ff6b6b;
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+a[href*="logout"]:hover {
+  background: rgba(255,107,107,0.1);
+  color: #ff6b6b;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .navbar { padding: 1rem 1.2rem; }
+  #navbar { gap: 1rem; font-size: 1rem; }
+  h1 { font-size: 2rem; }
+  .features { grid-template-columns: 1fr; padding: 0 1.2rem; }
+  form { margin: 2rem 1.2rem; }
+  body > h1, body > h2, body > p, body > ul {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}

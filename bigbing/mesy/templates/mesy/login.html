@@ -1,0 +1,17 @@
+{% extends 'mesy/layout.html' %}
+
+{% block body %}
+    {% if messages %}
+        {% for m in messages %}
+            <p style="color:red;">{{ m }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <lable>username: </lable>
+        <input type="text" name="username" required autocomplete="off"><br>
+        <lable>password: </lable>
+        <input type="password" name="password" required autocomplete="off">
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

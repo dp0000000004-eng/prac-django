@@ -1,0 +1,35 @@
+{% extends 'mesy/layout.html' %}
+
+{% block body %}
+
+   
+        <h1>Welcome {{ request.user.username }} to AirSwift ✈️</h1>
+        <p>Your gateway to booking and managing flights with ease.</p>
+        <a href="{% url 'all_flight' %}" class="btn">View Flights</a>
+    
+    <div class="features">
+            <div class="feature-card">
+                <h2>🛫 Explore Flights</h2>
+                <p>Browse available flights from different cities worldwide.</p>
+            </div>
+        <div class="feature-card">
+            <h2>👥 Manage Passengers</h2>
+            <p>Keep track of passenger details and bookings effortlessly.</p>
+        </div>
+        <div class="feature-card">
+            <h2>📍 Easy Navigation</h2>
+            <p>Simple and intuitive interface for smooth travel planning.</p>
+        </div>
+        <div class="feature-card">
+            <h2><a style="color:#2c3e50;" href="{% url 'about_view' request.user.id %}">📘About</a></h2><br>
+            <p>Feedbacks and about us.</p>
+            
+        </div>
+    </div>
+    
+
+<p>
+        You logedin with  {{ request.user.email }}
+    </p>
+    <a style="color:red;" href="{% url 'logout' %}">Logout</a>
+{% endblock %}

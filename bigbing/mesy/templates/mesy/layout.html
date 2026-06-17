@@ -1,12 +1,24 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>
             Flight
         </title>
+        <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'mesy/index.css' %}">
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        <nav class="navbar">
+        <div class="logo" id="navbar">✈️ AirSwift
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'all_flight' %}">Flights</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'feedback' %}">Feedbacks</a>
+         </div>
+        </nav>
+            {% block body %}
+            {% endblock %}
     </body>
 </html>
